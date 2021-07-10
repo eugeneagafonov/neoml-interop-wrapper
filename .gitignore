@@ -16,6 +16,9 @@
 # Mono auto generated files
 mono_crash.*
 
+# NET auto generated files on linux
+*.profraw
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/

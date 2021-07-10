@@ -8,7 +8,6 @@ namespace NeoMLInteropWrapper
     public static partial class NeoML
     {
 #if WIN64 || WIN32
-
         [SuppressUnmanagedCodeSecurity, DllImport("NeoProxy", EntryPoint = "CreateGPUMathEngine", CallingConvention = CallingConvention.Cdecl)]
         internal static extern IntPtr CreateGPUMathEngine(IntPtr errorInfo);
 

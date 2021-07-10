@@ -5,12 +5,19 @@
     <Platforms>x64;x86</Platforms>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Platform)'=='x64'">
+  <PropertyGroup Condition="'$(OS)' == 'Windows_NT' AND '$(Platform)' == 'x64'">
     <DefineConstants>TRACE;WIN64</DefineConstants>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Platform)'=='x86'">
+  <PropertyGroup Condition="'$(OS)' == 'Windows_NT' AND '$(Platform)' == 'x86'">
     <DefineConstants>TRACE;WIN32</DefineConstants>
   </PropertyGroup>
 
+  <PropertyGroup Condition="$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Linux)))">
+    <DefineConstants>TRACE;LINUX</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::OSX)))">
+    <DefineConstants>TRACE;OSX</DefineConstants>
+  </PropertyGroup>
 </Project>

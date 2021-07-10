@@ -7,7 +7,6 @@ namespace NeoMLInteropWrapper
     public partial class Dnn
     {
 #if WIN64 || WIN32
-
         [SuppressUnmanagedCodeSecurity, DllImport("NeoProxy", EntryPoint = "GetInputName", CallingConvention = CallingConvention.Cdecl)]
         internal static extern IntPtr GetInputName(IntPtr dnn, int index, IntPtr errorInfo);
 
